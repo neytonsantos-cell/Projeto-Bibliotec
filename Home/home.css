@@ -1,0 +1,80 @@
+/* CABEÇALHO */
+
+a {
+    text-decoration: none; /*Tira o sublinhado do link*/
+    color: var(--branco);
+}
+
+.cabecalho {
+    background-color: var(--azul-escuro);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Alinha os itens verticalmente no centro */
+
+    padding: 0 120px;
+
+    height: 10vh; /* Define a altura do cabeçalho como 10% da altura da viewport */
+    
+}
+
+.navegacao {
+    display: flex;
+    align-items: center; /* Alinha os links verticalmente no centro */
+    gap: 50px; /* Espaçamento entre os links */
+}
+
+.navegacao a {
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    font-size: 1em; /* Define o tamanho da fonte. 1em é relativo ao tamanho da fonte do elemento pai e equivale a 16px */
+    font-weight: 500; /* Define a espessura da fonte. 500 é um peso médio */
+}
+
+/*CONTEUDO PRINCIPAL*/
+
+/*Primeiro banner*/
+
+.banner-principal {
+    color: var(--branco);
+
+    height: 70vh; /* Define a altura do banner como 70% da altura da viewport */
+
+    background-image: url(../imgs/banner-principal-home.png);
+    background-size: cover; /* Faz com que a imagem de fundo cubra todo o elemento */
+    /* overflow: hidden; Evita que o conteúdo transborde do elemento */
+
+    display: flex;
+    justify-content: space-between; /* Centraliza horizontalmente o conteúdo dentro do banner */
+    align-items: center; /* Centraliza verticalmente o conteúdo dentro do banner */
+
+    padding: 0 120px; /* Adiciona espaçamento interno nas laterais do banner */
+}
+
+.texto-banner {
+    height: 100%; /* Define a altura do texto como 100% da altura do banner */
+    display: flex;
+    flex-direction: column; /* Organiza os elementos filhos em uma coluna */
+    align-items: flex-start; /* Centraliza horizontalmente os elementos filhos */
+    justify-content: center; /* Centraliza verticalmente os elementos filhos */
+    gap: 50px; /* Adiciona espaçamento entre os elementos filhos */
+}
+
+.texto-banner p {
+    font-size: 1.5em; /* Define o tamanho da fonte do parágrafo */
+    width: 50%;
+}
+
+.botao {
+    padding: 20px 50px; /* Adiciona espaçamento interno ao botão */
+    border-radius: 10px;
+    background-color: var(--cor-destaque);
+    color: var(--azul-escuro);
+    font-size: 1.2em; /* Define o tamanho da fonte do botão */
+    font-weight: 700; /* Define a espessura da fonte do botão */
+
+}
+
+.banner-principal img {
+   align-self: flex-end; /* Alinha a imagem na parte inferior do banner */
+   width: 35%;
+}
