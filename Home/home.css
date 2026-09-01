@@ -179,3 +179,25 @@ a {
     padding: 0 120px; /* Adiciona espaçamento interno nas laterais do banner */
     color: var(--branco);
 }
+
+.acervo {
+    padding: 50px 120px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 100px; 
+}
+
+.acervo-lista {
+    display: grid; 
+    grid-template-columns: repeat(4, 20%);
+    gap: 10%;
+    justify-content: center;
+}
+
+.acervo-item img {
+    width: 100%;
+    object-fit: cover;
+    
+}
