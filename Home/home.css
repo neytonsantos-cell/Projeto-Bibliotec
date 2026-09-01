@@ -61,7 +61,7 @@ a {
 
 .texto-banner p {
     font-size: 1.5em; /* Define o tamanho da fonte do parágrafo */
-    width: 50%;
+    width: 60%;
 }
 
 .botao {
@@ -71,10 +71,111 @@ a {
     color: var(--azul-escuro);
     font-size: 1.2em; /* Define o tamanho da fonte do botão */
     font-weight: 700; /* Define a espessura da fonte do botão */
+    text-transform: uppercase; /* Transforma o texto do botão em maiúsculas */
+}
 
+.botao:hover {
+    background-color: #2ab2ab; /* Altera a cor de fundo do botão ao passar o mouse */
+    color: var(--branco);
 }
 
 .banner-principal img {
    align-self: flex-end; /* Alinha a imagem na parte inferior do banner */
    width: 35%;
+}
+
+/* Titulo da seção */
+
+.titulo-secao {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos filhos em uma coluna */
+    align-items: center; /* Centraliza horizontalmente os elementos filhos */
+
+}
+
+.titulo-secao h2 {
+    font-size: 1.5em; /* Define o tamanho da fonte do título */
+    margin-bottom: 20px; /* Adiciona espaçamento abaixo do título */
+}
+
+.titulo-secao span {
+    display:flex;
+    width: 250px;
+    height: 4px;
+    background-color: var(--cor-destaque);
+}
+
+/* Seção de benefícios */
+
+.beneficios {
+    padding: 50px 120px; /* Adiciona espaçamento interno nas laterais da seção de benefícios */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente os elementos filhos */
+    justify-content: space-between; /* Distribui o espaço restante entre os elementos filhos */
+    gap: 100px; /* Adiciona espaçamento entre os elementos filhos */
+}
+
+.beneficio-lista {
+    display: grid; /* Define o layout como grid */
+    grid-template-columns: repeat(3, 20%);
+    gap: 10%;
+    justify-content: center;
+}
+
+.beneficio {
+    display: flex;
+    flex-direction: column; /* Organiza os elementos filhos em uma coluna */
+    align-items: center; /* Centraliza horizontalmente os elementos filhos */
+    justify-content: center; /* Centraliza verticalmente os elementos filhos */
+    padding: 80px 20px 50px;
+    border: 1px solid var(--azul-escuro);
+    border-radius: 10px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    position: relative; /* cria referencia de posicionamento para o icone, quando o icone for posicionado usa este card como referencia.*/
+}
+
+.beneficio-icone img {
+    width: 50%;
+}
+
+.beneficio-icone {
+    border: 4px solid var(--cor-destaque);
+    background-color: var(--branco);
+    border-radius: 50%;
+
+    width: 30%;
+    height: 30%;
+    position: absolute;
+    top: -15%;
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza o ícone horizontalmente */
+    display: grid;
+    place-items: center; /* Centraliza o conteúdo dentro do ícone */    
+}
+
+.beneficio h3 {
+    font-size: 1.2em; /* Define o tamanho da fonte do título do benefício */
+    margin-bottom: 30px; /* Adiciona espaçamento abaixo do título do benefício */
+    text-transform: uppercase; /* Transforma o texto em maiúsculas */
+    width: 90%;
+}
+
+.beneficio p {
+    font-size: 1em; /* Define o tamanho da fonte do parágrafo do benefício */
+    width: 80%;
+}
+
+/* Banner do meio */
+
+.banner-meio {
+    height: 60vh;
+    background-image: url(../imgs/Banner\ centro.svg);
+    background-size: cover; /* Faz com que a imagem de fundo cubra todo o elemento */
+    
+    display: flex;
+    justify-content: flex-end; /* Centraliza horizontalmente o conteúdo dentro do banner */
+    padding: 0 120px; /* Adiciona espaçamento interno nas laterais do banner */
+    color: var(--branco);
 }
