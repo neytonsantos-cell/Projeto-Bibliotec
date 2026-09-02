@@ -183,49 +183,47 @@ a {
 /* Seção de acervo */
 
 .acervo {
-    padding: 50px 120px; 
+    padding: 50px 120px;
     display: flex;
     flex-direction: column;
-    align-items: center; 
-    justify-content: space-between; 
-    gap: 100px; 
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
 }
 
 .acervo-lista {
-    display: grid; 
-    grid-template-columns: repeat(4, 20%);
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 2%;
     justify-content: center;
-    gap: 6%;
+    width: 100%;
 }
 
 .acervo-item img {
-    width: 100%;
-    border-radius: 10px;
+    height: 300px;
 }
 
 .acervo-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 20px;
     text-align: center;
+    height: 100%;
+    
 }
 
 .acervo-item h3 {
-    font-size: 1.1em;
+    font-size: 1.2em;
     text-transform: uppercase;
+    width: 65%;
 }
 
-.acervo-item h4 {
-    font-size: 0.9em;
-    color: var(--cinza-escuro);
+.nome-autor {
+    font-size: 0.8em;    
 }
 
-.acervo-item p {
-    font-size: 0.9em;
-    color: #000000;
-}
 
 /* Rodapé */
 .rodape {
@@ -235,6 +233,10 @@ a {
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows: auto auto auto;
+    grid-auto-flow: column;
+    align-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .logos{
@@ -248,11 +250,13 @@ a {
 
 .pacote-links {
     grid-column: 2;
-    grid-row: 1;
+    grid-row: auto;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 50px;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
 }
 
 .colunas-rodape {
@@ -280,12 +284,12 @@ a {
 .redes-sociais {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 75px;
 }
 
 .redes-icon {
     display: flex;
-    gap: 20px;
+    justify-content: space-between;
 }
 
 .redes-icon img {
