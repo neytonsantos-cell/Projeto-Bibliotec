@@ -180,6 +180,8 @@ a {
     color: var(--branco);
 }
 
+/* Seção de acervo */
+
 .acervo {
     padding: 50px 120px; 
     display: flex;
@@ -192,12 +194,126 @@ a {
 .acervo-lista {
     display: grid; 
     grid-template-columns: repeat(4, 20%);
-    gap: 10%;
     justify-content: center;
+    gap: 6%;
 }
 
 .acervo-item img {
     width: 100%;
-    object-fit: cover;
-    
+    border-radius: 10px;
+}
+
+.acervo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.acervo-item h3 {
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.acervo-item h4 {
+    font-size: 0.9em;
+    color: var(--cinza-escuro);
+}
+
+.acervo-item p {
+    font-size: 0.9em;
+    color: #000000;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 50px 120px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: auto auto auto;
+}
+
+.logos{
+   grid-column: 1;
+   grid-row: 1;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   gap: 50px;
+}
+
+.pacote-links {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 50px;
+}
+
+.colunas-rodape {
+    display: flex;
+    gap: 100px;
+}
+
+.col-rodape h4, .redes-sociais h4 {
+    color: var(--cor-destaque);
+    font-size: 0.8em;
+    margin-top: 1em;
+    margin-bottom: 20px;
+}
+
+.col-rodape ul {
+    list-style: none;
+    padding: 0; /* Remove o padding padrão da lista */
+}
+
+.col-rodape li {
+    margin-bottom: 10px; /* Adiciona espaçamento entre os itens da lista */
+    font-size: 0.8em;
+}
+
+.redes-sociais {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.redes-icon {
+    display: flex;
+    gap: 20px;
+}
+
+.redes-icon img {
+    width: 70%;
+    height: 70%;
+}
+
+.rodape span {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-top: 20px;   
+}
+
+.direitos {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+
+.legal-links {
+    display: flex;
+    gap: 20px;
 }
