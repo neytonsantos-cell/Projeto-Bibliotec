@@ -1,378 +1,598 @@
-/* CABEÇALHO */
+/* =========================================================
+   BIBLIOTEC — HOME
+   Layout moderno, responsivo e consistente
+   ========================================================= */
 
+/* ---------- Links ---------- */
 a {
-    text-decoration: none;
-    /*Tira o sublinhado do link*/
     color: var(--branco);
+    text-decoration: none;
 }
 
+/* ---------- Cabeçalho ---------- */
 .cabecalho {
-    background-color: var(--azul-escuro);
-
+    min-height: 76px;
+    padding: 0 clamp(24px, 7vw, 120px);
+    background: var(--azul-escuro);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    /* Alinha os itens verticalmente no centro */
+    justify-content: space-between;
+    gap: 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+}
 
-    padding: 0 120px;
+.cabecalho > a {
+    display: flex;
+    align-items: center;
+}
 
-    height: 10vh;
-    /* Define a altura do cabeçalho como 10% da altura da viewport */
-
+.cabecalho > a img {
+    width: clamp(150px, 16vw, 205px);
+    height: auto;
 }
 
 .navegacao {
     display: flex;
     align-items: center;
-    /* Alinha os links verticalmente no centro */
-    gap: 50px;
-    /* Espaçamento entre os links */
+    justify-content: flex-end;
+    gap: clamp(20px, 3.5vw, 50px);
 }
 
 .navegacao a {
+    position: relative;
+    padding: 10px 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    /* Transforma o texto em maiúsculas */
-    font-size: 1em;
-    /* Define o tamanho da fonte. 1em é relativo ao tamanho da fonte do elemento pai e equivale a 16px */
-    font-weight: 500;
-    /* Define a espessura da fonte. 500 é um peso médio */
+    transition: color 0.2s ease;
 }
 
-/*CONTEUDO PRINCIPAL*/
+.navegacao a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    width: 100%;
+    height: 2px;
+    background: var(--cor-destaque);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
 
-/*Primeiro banner*/
+.navegacao a:hover,
+.navegacao a:focus-visible {
+    color: var(--cor-destaque);
+}
 
+.navegacao a:hover::after,
+.navegacao a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+/* ---------- Conteúdo principal ---------- */
 .banner-principal {
+    min-height: min(680px, calc(100vh - 76px));
+    padding: 60px clamp(24px, 7vw, 120px);
     color: var(--branco);
-
-    height: 70vh;
-    /* Define a altura do banner como 70% da altura da viewport */
-
-    background-image: url(../imgs/banner-principal-home.png);
+    background-image: linear-gradient(90deg, rgba(38, 51, 61, 0.96) 0%, rgba(38, 51, 61, 0.82) 48%, rgba(38, 51, 61, 0.18) 100%), url(../imgs/banner-principal-home.png);
     background-size: cover;
-    /* Faz com que a imagem de fundo cubra todo o elemento */
-    /* overflow: hidden; Evita que o conteúdo transborde do elemento */
-
+    background-position: center;
     display: flex;
-    justify-content: space-between;
-    /* Centraliza horizontalmente o conteúdo dentro do banner */
     align-items: center;
-    /* Centraliza verticalmente o conteúdo dentro do banner */
-
-    padding: 0 120px;
-    /* Adiciona espaçamento interno nas laterais do banner */
+    justify-content: space-between;
+    gap: 40px;
+    overflow: hidden;
 }
 
 .texto-banner {
-    height: 100%;
-    /* Define a altura do texto como 100% da altura do banner */
+    max-width: 650px;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
-    /* Organiza os elementos filhos em uma coluna */
     align-items: flex-start;
-    /* Centraliza horizontalmente os elementos filhos */
     justify-content: center;
-    /* Centraliza verticalmente os elementos filhos */
-    gap: 50px;
-    /* Adiciona espaçamento entre os elementos filhos */
+    gap: 28px;
+    position: relative;
+    z-index: 2;
+}
+
+.texto-banner h1,
+.texto-banner h2 {
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+}
+
+.texto-banner h1 {
+    max-width: 620px;
+    font-size: clamp(2.3rem, 5vw, 4.5rem);
+    font-weight: 800;
+}
+
+.texto-banner h2 {
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    font-weight: 800;
 }
 
 .texto-banner p {
-    font-size: 1.5em;
-    /* Define o tamanho da fonte do parágrafo */
-    width: 60%;
+    max-width: 570px;
+    width: 100%;
+    font-size: clamp(1rem, 1.5vw, 1.3rem);
+    line-height: 1.7;
 }
 
 .botao {
-    padding: 20px 50px;
-    /* Adiciona espaçamento interno ao botão */
-    border-radius: 10px;
-    background-color: var(--cor-destaque);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    padding: 15px 30px;
+    border: 2px solid var(--cor-destaque);
+    border-radius: 999px;
+    background: var(--cor-destaque);
     color: var(--azul-escuro);
-    font-size: 1.2em;
-    /* Define o tamanho da fonte do botão */
-    font-weight: 700;
-    /* Define a espessura da fonte do botão */
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    /* Transforma o texto do botão em maiúsculas */
+    box-shadow: 0 10px 24px rgba(47, 214, 203, 0.22);
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.botao:hover {
-    background-color: #2ab2ab;
-    /* Altera a cor de fundo do botão ao passar o mouse */
+.botao:hover,
+.botao:focus-visible {
+    background: transparent;
     color: var(--branco);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.2);
 }
 
 .banner-principal img {
     align-self: flex-end;
-    /* Alinha a imagem na parte inferior do banner */
-    width: 35%;
+    width: min(38vw, 520px);
+    max-height: 620px;
+    object-fit: contain;
+    object-position: bottom;
+    filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.22));
 }
 
-/* Titulo da seção */
-
+/* ---------- Títulos de seção ---------- */
 .titulo-secao {
     display: flex;
     flex-direction: column;
-    /* Organiza os elementos filhos em uma coluna */
     align-items: center;
-    /* Centraliza horizontalmente os elementos filhos */
-
+    gap: 14px;
+    text-align: center;
 }
 
 .titulo-secao h2 {
-    font-size: 1.5em;
-    /* Define o tamanho da fonte do título */
-    margin-bottom: 20px;
-    /* Adiciona espaçamento abaixo do título */
+    margin: 0;
+    font-size: clamp(1.7rem, 3vw, 2.35rem);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 .titulo-secao span {
-    display: flex;
-    width: 250px;
+    display: block;
+    width: 72px;
     height: 4px;
-    background-color: var(--cor-destaque);
+    border-radius: 99px;
+    background: var(--cor-destaque);
 }
 
-/* Seção de benefícios */
-
+/* ---------- Benefícios ---------- */
 .beneficios {
-    padding: 50px 120px;
-    /* Adiciona espaçamento interno nas laterais da seção de benefícios */
+    padding: clamp(70px, 8vw, 110px) clamp(24px, 7vw, 120px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Centraliza horizontalmente os elementos filhos */
-    justify-content: space-between;
-    /* Distribui o espaço restante entre os elementos filhos */
-    gap: 100px;
-    /* Adiciona espaçamento entre os elementos filhos */
+    gap: 70px;
 }
 
 .beneficio-lista {
+    width: min(1100px, 100%);
     display: grid;
-    /* Define o layout como grid */
-    grid-template-columns: repeat(3, 20%);
-    gap: 10%;
-    justify-content: center;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
 }
 
 .beneficio {
+    min-height: 280px;
+    padding: 72px 28px 34px;
+    border: 1px solid rgba(38, 51, 61, 0.12);
+    border-radius: 18px;
+    background: var(--branco);
+    box-shadow: 0 12px 35px rgba(38, 51, 61, 0.10);
     display: flex;
     flex-direction: column;
-    /* Organiza os elementos filhos em uma coluna */
     align-items: center;
-    /* Centraliza horizontalmente os elementos filhos */
     justify-content: center;
-    /* Centraliza verticalmente os elementos filhos */
-    padding: 80px 20px 50px;
-    border: 1px solid var(--azul-escuro);
-    border-radius: 10px;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
     text-align: center;
     position: relative;
-    /* cria referencia de posicionamento para o icone, quando o icone for posicionado usa este card como referencia.*/
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
-.beneficio-icone img {
-    width: 50%;
+.beneficio:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 20px 42px rgba(38, 51, 61, 0.15);
 }
 
 .beneficio-icone {
+    width: 82px;
+    height: 82px;
     border: 4px solid var(--cor-destaque);
-    background-color: var(--branco);
     border-radius: 50%;
-
-    width: 30%;
-    height: 30%;
-    position: absolute;
-    top: -15%;
-    left: 50%;
-    transform: translateX(-50%);
-    /* Centraliza o ícone horizontalmente */
+    background: var(--branco);
     display: grid;
     place-items: center;
-    /* Centraliza o conteúdo dentro do ícone */
+    position: absolute;
+    top: -41px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.beneficio-icone img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
 }
 
 .beneficio h3 {
-    font-size: 1.2em;
-    /* Define o tamanho da fonte do título do benefício */
-    margin-bottom: 30px;
-    /* Adiciona espaçamento abaixo do título do benefício */
+    max-width: 290px;
+    margin: 0 0 14px;
+    font-size: 1.05rem;
+    line-height: 1.45;
     text-transform: uppercase;
-    /* Transforma o texto em maiúsculas */
-    width: 90%;
 }
 
 .beneficio p {
-    font-size: 1em;
-    /* Define o tamanho da fonte do parágrafo do benefício */
-    width: 80%;
+    max-width: 290px;
+    margin: 0;
+    color: #53606a;
+    font-size: 0.95rem;
+    line-height: 1.65;
 }
 
-/* Banner do meio */
-
+/* ---------- Banner de acesso ---------- */
 .banner-meio {
-    height: 60vh;
-    background-image: url(../imgs/Banner\ centro.svg);
+    min-height: 430px;
+    padding: 60px clamp(24px, 7vw, 120px);
+    background-image: linear-gradient(90deg, rgba(38, 51, 61, 0.08) 0%, rgba(38, 51, 61, 0.68) 50%, rgba(38, 51, 61, 0.96) 100%), url(../imgs/Banner\ centro.svg);
     background-size: cover;
-    /* Faz com que a imagem de fundo cubra todo o elemento */
-
+    background-position: center;
+    color: var(--branco);
     display: flex;
     justify-content: flex-end;
-    /* Centraliza horizontalmente o conteúdo dentro do banner */
-    padding: 0 120px;
-    /* Adiciona espaçamento interno nas laterais do banner */
-    color: var(--branco);
+    align-items: center;
 }
 
-/* Seção de acervo */
+.banner-meio .texto-banner {
+    width: min(520px, 100%);
+}
 
+/* ---------- Acervo ---------- */
 .acervo {
-    padding: 50px 120px;
+    padding: clamp(70px, 8vw, 110px) clamp(24px, 7vw, 120px);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 100px;
+    gap: 60px;
+    background: #f7f9fa;
 }
 
 .acervo-lista {
+    width: min(1100px, 100%);
     display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 2%;
-    justify-content: center;
-    width: 100%;
-}
-
-.acervo-item img {
-    height: 300px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .acervo-item {
+    min-width: 0;
+    padding: 24px 18px 26px;
+    border: 1px solid rgba(38, 51, 61, 0.08);
+    border-radius: 16px;
+    background: var(--branco);
+    box-shadow: 0 8px 25px rgba(38, 51, 61, 0.08);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 20px;
+    gap: 14px;
     text-align: center;
-    height: 100%;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
 
+.acervo-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 34px rgba(38, 51, 61, 0.13);
+}
+
+.acervo-item img {
+    width: auto;
+    height: clamp(230px, 24vw, 300px);
+    max-width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.14));
 }
 
 .acervo-item h3 {
-    font-size: 1.2em;
+    width: 100%;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.4;
     text-transform: uppercase;
-    width: 65%;
 }
 
 .nome-autor {
-    font-size: 0.8em;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    color: #66727b;
+    font-size: 0.82rem;
 }
 
+.nome-autor h4,
+.nome-autor p {
+    margin: 0;
+}
 
-/* Rodapé */
+.nome-autor h4 {
+    color: var(--texto);
+}
+
+/* ---------- Rodapé ---------- */
 .rodape {
-    background-color: var(--azul-escuro);
+    padding: 60px clamp(24px, 7vw, 120px) 28px;
+    background: var(--azul-escuro);
     color: var(--branco);
-    padding: 50px 120px;
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: auto auto auto;
-    grid-auto-flow: column;
-    align-content: space-between;
-    justify-content: center;
-    align-items: center;
+    grid-template-columns: minmax(180px, 1fr) minmax(0, 2fr);
+    gap: 45px 80px;
 }
 
 .logos {
-    grid-column: 1;
-    grid-row: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 50px;
+    align-items: flex-start;
+    gap: 32px;
 }
 
 .logos img {
-    width: 60%;
+    width: min(190px, 100%);
     height: auto;
 }
 
 .pacote-links {
-    grid-column: 2;
-    grid-row: auto;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    gap: clamp(40px, 7vw, 100px);
 }
 
 .colunas-rodape {
     display: flex;
-    gap: 100px;
+    gap: clamp(40px, 6vw, 90px);
 }
 
 .col-rodape h4,
 .redes-sociais h4 {
+    margin: 0 0 18px;
     color: var(--cor-destaque);
-    font-size: 0.8em;
-    margin-top: 1em;
-    margin-bottom: 20px;
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
 }
 
 .col-rodape ul {
-    list-style: none;
+    margin: 0;
     padding: 0;
-    /* Remove o padding padrão da lista */
+    list-style: none;
 }
 
 .col-rodape li {
-    margin-bottom: 10px;
-    /* Adiciona espaçamento entre os itens da lista */
-    font-size: 0.8em;
+    margin-bottom: 11px;
+    font-size: 0.82rem;
+}
+
+.col-rodape a,
+.legal-links a {
+    color: rgba(255, 255, 255, 0.78);
+    transition: color 0.2s ease;
+}
+
+.col-rodape a:hover,
+.legal-links a:hover {
+    color: var(--cor-destaque);
 }
 
 .redes-sociais {
-    display: flex;
-    align-items: center;
-    gap: 75px;
+    min-width: 190px;
 }
 
 .redes-icon {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.redes-icon a {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.redes-icon a:hover {
+    background: rgba(47, 214, 203, 0.12);
+    transform: translateY(-2px);
 }
 
 .redes-icon img {
-    width: 70%;
-    height: 70%;
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
-.rodape span {
+.rodape > span {
     grid-column: 1 / -1;
-    grid-row: 2;
-    display: block;
     width: 100%;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.15);
 }
 
 .direitos {
     grid-column: 1 / -1;
-    grid-row: 3;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    text-align: center;
-    font-size: 0.8em;
-    margin-top: 20px;
+    gap: 20px;
+    font-size: 0.75rem;
+}
+
+.direitos p {
+    margin: 0;
 }
 
 .legal-links {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 18px;
+}
+
+/* ---------- Responsividade ---------- */
+@media (max-width: 900px) {
+    .cabecalho {
+        min-height: auto;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        flex-direction: column;
+    }
+
+    .navegacao {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 28px;
+    }
+
+    .banner-principal {
+        min-height: 620px;
+    }
+
+    .banner-principal img {
+        width: 42%;
+    }
+
+    .beneficio-lista,
+    .acervo-lista {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rodape {
+        grid-template-columns: 1fr;
+    }
+
+    .pacote-links {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 640px) {
+    .cabecalho > a img {
+        width: 170px;
+    }
+
+    .navegacao a {
+        font-size: 0.75rem;
+    }
+
+    .banner-principal {
+        min-height: 650px;
+        padding-top: 55px;
+        padding-bottom: 0;
+        background-image: linear-gradient(180deg, rgba(38, 51, 61, 0.94) 0%, rgba(38, 51, 61, 0.72) 100%), url(../imgs/banner-principal-home.png);
+        align-items: flex-start;
+    }
+
+    .banner-principal .texto-banner {
+        padding-top: 30px;
+    }
+
+    .banner-principal img {
+        width: 65%;
+        max-height: 300px;
+        position: absolute;
+        right: 50%;
+        bottom: 0;
+        transform: translateX(50%);
+        opacity: 0.95;
+    }
+
+    .banner-meio {
+        min-height: 480px;
+        justify-content: center;
+        text-align: center;
+        background-position: 35% center;
+    }
+
+    .banner-meio .texto-banner {
+        align-items: center;
+    }
+
+    .beneficio-lista,
+    .acervo-lista {
+        grid-template-columns: 1fr;
+        width: min(380px, 100%);
+    }
+
+    .beneficios,
+    .acervo {
+        gap: 55px;
+    }
+
+    .acervo-item img {
+        height: 280px;
+    }
+
+    .pacote-links,
+    .colunas-rodape {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .redes-sociais {
+        min-width: 0;
+    }
+
+    .direitos {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .legal-links {
+        justify-content: flex-start;
+        gap: 10px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
 }
