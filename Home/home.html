@@ -1,151 +1,155 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliotec - Gestão de Bibliotecas</title>
+    <meta name="description" content="BiblioTec — gestão moderna e automatizada de bibliotecas.">
+    <title>BiblioTec — Gestão de Bibliotecas</title>
     <link rel="stylesheet" href="home.css">
     <link rel="stylesheet" href="../styles/global.css">
     <link rel="shortcut icon" href="../imgs/Icone - Bibliotec.png" type="image/x-icon">
 </head>
 <body>
     <header class="cabecalho">
-        <a href="#">
-            <img src="/imgs/Logo Horizontal - branca.svg" alt="Logo da Bibliotec">
+        <a href="#topo" aria-label="BiblioTec — início">
+            <img src="../imgs/Logo Horizontal - branca.svg" alt="Logo da BiblioTec">
         </a>
-        <nav class="navegacao">
-            <a href="#quem-somos">Quem Somos</a>
-            <a href="#acervo">Nossos Acervos</a>
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a href="#quem-somos">Quem somos</a>
+            <a href="#acervo">Acervo</a>
             <a href="#acesso">Login</a>
         </nav>
     </header>
-    <main>
-        <section class="banner-principal">
+
+    <main id="topo">
+        <section class="banner-principal" aria-labelledby="titulo-principal">
             <div class="texto-banner">
-                <h1>Bem-vindo(a) à Bibliotec</h1>
-                <p>O melhor gerenciador para bibliotecas de maineira moderna e automatizada!</p>
-                <a href="" class="botao">Acessar</a>
+                <h1 id="titulo-principal">Bem-vindo(a) à BiblioTec</h1>
+                <p>O gerenciador de bibliotecas moderno, simples e automatizado para facilitar o acesso ao conhecimento.</p>
+                <a href="#acesso" class="botao">Acessar</a>
             </div>
             <img src="../imgs/img-mulher.png" alt="Mulher lendo um livro">
         </section>
-        <section class="beneficios" id="quem-somos">
+
+        <section class="beneficios" id="quem-somos" aria-labelledby="titulo-beneficios">
             <div class="titulo-secao">
-                <h2>Porque usar a Bibliotec</h2>
-                <span></span>
+                <h2 id="titulo-beneficios">Por que usar a BiblioTec?</h2>
+                <span aria-hidden="true"></span>
             </div>
+
             <div class="beneficio-lista">
                 <article class="beneficio">
-                    <div class="beneficio-icone">
-                        <img src="../imgs/icone-livro-home.svg" alt="Icone de livro">
+                    <div class="beneficio-icone" aria-hidden="true">
+                        <img src="../imgs/icone-livro-home.svg" alt="">
                     </div>
                     <h3>Reserve seu livro online</h3>
-                    <p>Imagine livros que você ama, listados em um único lugar.</p>
+                    <p>Encontre seu próximo livro e faça a reserva de forma rápida e prática.</p>
                 </article>
+
                 <article class="beneficio">
-                    <div class="beneficio-icone">
-                        <img src="../imgs/icone-lista-home.svg" alt="Icone de lista">
+                    <div class="beneficio-icone" aria-hidden="true">
+                        <img src="../imgs/icone-lista-home.svg" alt="">
                     </div>
-                    <h3>Visualize se seu livro está disponível</h3>
-                    <p>Imagine livros que você ama, listados em um único lugar.</p>
-                </article>                
+                    <h3>Veja a disponibilidade</h3>
+                    <p>Consulte o acervo e saiba quais livros estão disponíveis antes de ir à biblioteca.</p>
+                </article>
+
                 <article class="beneficio">
-                    <div class="beneficio-icone">
-                        <img src="../imgs/icone-coracao-home.svg" alt="Icone de coração">
+                    <div class="beneficio-icone" aria-hidden="true">
+                        <img src="../imgs/icone-coracao-home.svg" alt="">
                     </div>
-                    <h3>Faça sua lista de favoritos</h3>
-                    <p>Imagine livros que você ama, listados em um único lugar.</p>
+                    <h3>Crie sua lista de favoritos</h3>
+                    <p>Guarde os títulos que você mais gosta e tenha seus favoritos sempre por perto.</p>
                 </article>
             </div>
         </section>
-        <section class="banner-meio" id="acesso">
+
+        <section class="banner-meio" id="acesso" aria-labelledby="titulo-acesso">
             <div class="texto-banner">
-                <h2>Acesse nossa plataforma!</h2>
-                <p>Faça o login ou solicite cadastro para a bibliotecária.</p>
+                <h2 id="titulo-acesso">Acesse nossa plataforma</h2>
+                <p>Faça login ou solicite seu cadastro com a bibliotecária.</p>
                 <a href="#" class="botao">Acessar</a>
             </div>
         </section>
-        <section class="acervo" id="acervo">
+
+        <section class="acervo" id="acervo" aria-labelledby="titulo-acervo">
             <div class="titulo-secao">
-                <h2>Top livros recomendados</h2>
+                <h2 id="titulo-acervo">Top livros recomendados</h2>
+                <span aria-hidden="true"></span>
             </div>
+
             <div class="acervo-lista">
                 <article class="acervo-item">
-                    <img src="../imgs/livro-aescoladobememal.svg" alt="Capa do livro A Escola do Bem e do Mal">
-                    <h3>A escola do bem e do mal</h3>
-                    <div class="nome-autor">
-                        <h4>Autor:</h4>
-                        <p>Soman Chainani</p>
-                    </div>
+                    <img src="../imgs/livro-aescoladobememal.svg" alt="Capa de A Escola do Bem e do Mal">
+                    <h3>A Escola do Bem e do Mal</h3>
+                    <div class="nome-autor"><h4>Autor:</h4><p>Soman Chainani</p></div>
                 </article>
+
                 <article class="acervo-item">
-                    <img src="../imgs/livro-filhasdalua.svg" alt="Capa do livro Filhas da Lua">
-                    <span></span>
-                    <h3>Filhas da lua</h3>
-                    <div class="nome-autor">
-                        <h4>Autor:</h4>
-                        <p>Carolina França</p>
-                    </div>
+                    <img src="../imgs/livro-filhasdalua.svg" alt="Capa de Filhas da Lua">
+                    <h3>Filhas da Lua</h3>
+                    <div class="nome-autor"><h4>Autor:</h4><p>Carolina França</p></div>
                 </article>
+
                 <article class="acervo-item">
-                    <img src="../imgs/livro-ti.svg" alt="Capa do livro TI para Negócios">
-                    <h3>TI para negócios</h3>
-                    <div class="nome-autor">
-                        <h4>Autor:</h4>
-                        <p>Edison Perin</p>
-                    </div>
+                    <img src="../imgs/livro-ti.svg" alt="Capa de TI para Negócios">
+                    <h3>TI para Negócios</h3>
+                    <div class="nome-autor"><h4>Autor:</h4><p>Edison Perin</p></div>
                 </article>
+
                 <article class="acervo-item">
-                    <img src="../imgs/livro-mestredotempo.svg" alt="Capa do livro O Mestre do Tempo">
-                    <h3>O mestre do tempo</h3>
-                    <div class="nome-autor">
-                        <h4>Autor:</h4>
-                        <p>R.V. Campbell</p>
-                    </div>
+                    <img src="../imgs/livro-mestredotempo.svg" alt="Capa de O Mestre do Tempo">
+                    <h3>O Mestre do Tempo</h3>
+                    <div class="nome-autor"><h4>Autor:</h4><p>R. V. Campbell</p></div>
                 </article>
             </div>
-        </section>        
+        </section>
     </main>
+
     <footer class="rodape">
-        
         <div class="logos">
-            <img src="../imgs/Logo Horizontal - branca.svg" alt="Logo do BiblioTec">
+            <img src="../imgs/Logo Horizontal - branca.svg" alt="Logo da BiblioTec">
             <img src="../imgs/SENAI_São_Paulo_logo 1.svg" alt="Logo do SENAI São Paulo">
         </div>
+
         <div class="pacote-links">
             <div class="colunas-rodape">
                 <div class="col-rodape">
                     <h4>Bibliotecas</h4>
                     <ul>
-                        <li><a href="#">Baixar apliccativo</a></li>
+                        <li><a href="#">Baixar aplicativo</a></li>
                         <li><a href="#">Suporte ao usuário</a></li>
                     </ul>
                 </div>
                 <div class="col-rodape">
-                    <h4>Quem Somos</h4>
+                    <h4>Quem somos</h4>
                     <ul>
                         <li><a href="#">Clientes</a></li>
-                        <li><a href="#">Benefícios</a></li>
+                        <li><a href="#quem-somos">Benefícios</a></li>
                     </ul>
                 </div>
             </div>
+
             <div class="redes-sociais">
                 <h4>Siga nas redes sociais</h4>
                 <div class="redes-icon">
-                    <a href="#"><img src="../imgs/icone-facebook.svg" alt="Icone do Facebook"></a>
-                    <a href="#"><img src="../imgs/icone-instagram.svg" alt="Icone do Instagram"></a>
-                    <a href="#"><img src="../imgs/icone-linkedin.svg" alt="Icone do LinkedIn"></a>
+                    <a href="#" aria-label="Facebook"><img src="../imgs/icone-facebook.svg" alt=""></a>
+                    <a href="#" aria-label="Instagram"><img src="../imgs/icone-instagram.svg" alt=""></a>
+                    <a href="#" aria-label="LinkedIn"><img src="../imgs/icone-linkedin.svg" alt=""></a>
                 </div>
             </div>
         </div>
-        <span></span>
+
+        <span aria-hidden="true"></span>
+
         <div class="direitos">
-            <p>© 2026 Biblio Tec.</p>
+            <p>© 2026 BiblioTec.</p>
             <div class="legal-links">
                 <a href="#">Acessibilidade</a>
                 <a href="#">Política de Privacidade</a>
                 <a href="#">Termos e Condições</a>
             </div>
         </div>
-    </footer>    
+    </footer>
 </body>
 </html>
