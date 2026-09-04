@@ -12,6 +12,7 @@
     --texto: #26333D;
     --branco: #FFFFFF;
     --cor-destaque: #2FD6CB;
+    --fundos: #E9F0EF;
 }
 
 html {
@@ -23,4 +24,36 @@ body{
    background-color: var(--branco);
    color: var(--texto);
 
+}
+
+/* CABEÇALHO */
+
+a {
+    text-decoration: none;
+    color: var(--branco);
+}
+
+.cabecalho {
+    background-color: var(--azul-escuro);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 120px;
+    height: 10vh;
+}
+.cabecalho img {
+    width: 150px;
+    height: 50px;
+}
+.navegacao {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.navegacao a {
+    font-size: 1em;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    font-weight: 600;
 }
