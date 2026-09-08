@@ -99,6 +99,7 @@
 }
 
 /* CONTEÚDO DA LISTAGEM */
+
 .conteudo-listagem {
     display: flex;
     flex-direction: column;
