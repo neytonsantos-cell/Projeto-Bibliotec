@@ -1,130 +1,76 @@
-/* CABEÇALHO */
+/* Conteúdo principal */
 
-a {
-    text-decoration: none;
-    /*Tira o sublinhado do link*/
-    color: var(--branco);
-}
-
-.cabecalho {
-    background-color: var(--azul-escuro);
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* Alinha os itens verticalmente no centro */
-
-    padding: 0 120px;
-
-    height: 10vh;
-    /* Define a altura do cabeçalho como 10% da altura da viewport */
-
-}
-
-.navegacao {
-    display: flex;
-    align-items: center;
-    /* Alinha os links verticalmente no centro */
-    gap: 50px;
-    /* Espaçamento entre os links */
-}
-
-.navegacao a {
-    text-transform: uppercase;
-    /* Transforma o texto em maiúsculas */
-    font-size: 1em;
-    /* Define o tamanho da fonte. 1em é relativo ao tamanho da fonte do elemento pai e equivale a 16px */
-    font-weight: 500;
-    /* Define a espessura da fonte. 500 é um peso médio */
-}
-
-/*CONTEUDO PRINCIPAL*/
-
-/*Primeiro banner*/
-
+/* Primeiro banner */
 .banner-principal {
     color: var(--branco);
 
     height: 70vh;
-    /* Define a altura do banner como 70% da altura da viewport */
 
     background-image: url(../imgs/banner-principal-home.png);
     background-size: cover;
-    /* Faz com que a imagem de fundo cubra todo o elemento */
-    /* overflow: hidden; Evita que o conteúdo transborde do elemento */
+
+    /* overflow: hidden;  evita que os elementos transbordem */
 
     display: flex;
-    justify-content: space-between;
-    /* Centraliza horizontalmente o conteúdo dentro do banner */
     align-items: center;
-    /* Centraliza verticalmente o conteúdo dentro do banner */
+    justify-content: space-between;
 
     padding: 0 120px;
-    /* Adiciona espaçamento interno nas laterais do banner */
 }
 
 .texto-banner {
     height: 100%;
-    /* Define a altura do texto como 100% da altura do banner */
+
     display: flex;
     flex-direction: column;
-    /* Organiza os elementos filhos em uma coluna */
+
     align-items: flex-start;
-    /* Centraliza horizontalmente os elementos filhos */
     justify-content: center;
-    /* Centraliza verticalmente os elementos filhos */
+
     gap: 50px;
-    /* Adiciona espaçamento entre os elementos filhos */
 }
 
 .texto-banner p {
     font-size: 1.5em;
-    /* Define o tamanho da fonte do parágrafo */
     width: 60%;
 }
 
 .botao {
     padding: 20px 50px;
-    /* Adiciona espaçamento interno ao botão */
+
     border-radius: 10px;
+
     background-color: var(--cor-destaque);
     color: var(--azul-escuro);
+
     font-size: 1.2em;
-    /* Define o tamanho da fonte do botão */
     font-weight: 700;
-    /* Define a espessura da fonte do botão */
+
     text-transform: uppercase;
-    /* Transforma o texto do botão em maiúsculas */
 }
 
 .botao:hover {
     background-color: #2ab2ab;
-    /* Altera a cor de fundo do botão ao passar o mouse */
     color: var(--branco);
+    /* cursor: pointer; */
 }
 
 .banner-principal img {
     align-self: flex-end;
-    /* Alinha a imagem na parte inferior do banner */
     width: 35%;
 }
 
-/* Titulo da seção */
+/* Titulo das seções */
 
 .titulo-secao {
     display: flex;
     flex-direction: column;
-    /* Organiza os elementos filhos em uma coluna */
     align-items: center;
-    /* Centraliza horizontalmente os elementos filhos */
-
 }
 
 .titulo-secao h2 {
     font-size: 1.5em;
-    /* Define o tamanho da fonte do título */
     margin-bottom: 20px;
-    /* Adiciona espaçamento abaixo do título */
 }
 
 .titulo-secao span {
@@ -134,44 +80,48 @@ a {
     background-color: var(--cor-destaque);
 }
 
-/* Seção de benefícios */
+/* Seção Benefícios */
 
 .beneficios {
     padding: 50px 120px;
-    /* Adiciona espaçamento interno nas laterais da seção de benefícios */
+
     display: flex;
     flex-direction: column;
+
     align-items: center;
-    /* Centraliza horizontalmente os elementos filhos */
     justify-content: space-between;
-    /* Distribui o espaço restante entre os elementos filhos */
+
     gap: 100px;
-    /* Adiciona espaçamento entre os elementos filhos */
 }
 
-.beneficio-lista {
+.beneficios-lista {
     display: grid;
-    /* Define o layout como grid */
+
     grid-template-columns: repeat(3, 20%);
     gap: 10%;
+
     justify-content: center;
 }
 
 .beneficio {
     display: flex;
     flex-direction: column;
-    /* Organiza os elementos filhos em uma coluna */
+
     align-items: center;
-    /* Centraliza horizontalmente os elementos filhos */
     justify-content: center;
-    /* Centraliza verticalmente os elementos filhos */
-    padding: 80px 20px 50px;
+
+    padding: 80px 20px 50px; /* em cima -> direita e esquerda -> embaixo */
+
     border: 1px solid var(--azul-escuro);
-    border-radius: 10px;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25); /* x -> y -> blur -> cor com transparência */
+
     text-align: center;
+
+    /* Cria referência de posicionamento para o ícone, quando o ícone for posicionado, uas esse card como referência. */
+
+    /* sem isso, o círculo poderia usar outro elemento da página como referência e sair passeando pelo layout. */
     position: relative;
-    /* cria referencia de posicionamento para o icone, quando o icone for posicionado usa este card como referencia.*/
 }
 
 .beneficio-icone img {
@@ -179,200 +129,176 @@ a {
 }
 
 .beneficio-icone {
+
     border: 4px solid var(--cor-destaque);
     background-color: var(--branco);
     border-radius: 50%;
 
     width: 30%;
     height: 30%;
+
+    /* Retira o ícone do fluxo normal, com o absolute ele pode ficar por cima do card */
     position: absolute;
+
+    /* Move o círculo para cima, o valor negativo faz ele sair parcialmente do card */
     top: -15%;
+
+    /* Coloca o começo do elemento em 50% da largura do card */
     left: 50%;
+
+    /* ajustamos o posicionamento do elemento, mas a borda esquerda do círculo fica no centro, não o círculo inteiro */
+    /* por isso usamos transform: translateX(-50%); que move o próprio círculo para a esquerda em 50% da largura dele, fazendo com que o círculo fique perfeitamente centralizado. */
     transform: translateX(-50%);
-    /* Centraliza o ícone horizontalmente */
+
     display: grid;
     place-items: center;
-    /* Centraliza o conteúdo dentro do ícone */
+
+    /* place-items: center; é a mesma coisa que colocar: 
+        align-itens: center e justify-items: center; */
 }
 
 .beneficio h3 {
     font-size: 1.2em;
-    /* Define o tamanho da fonte do título do benefício */
     margin-bottom: 30px;
-    /* Adiciona espaçamento abaixo do título do benefício */
     text-transform: uppercase;
-    /* Transforma o texto em maiúsculas */
     width: 90%;
 }
 
 .beneficio p {
     font-size: 1em;
-    /* Define o tamanho da fonte do parágrafo do benefício */
     width: 80%;
 }
 
-/* Banner do meio */
-
+/* Banner meio */
 .banner-meio {
     height: 60vh;
     background-image: url(../imgs/Banner\ centro.svg);
     background-size: cover;
-    /* Faz com que a imagem de fundo cubra todo o elemento */
+    /* background-repeat: no-repeat; */
 
     display: flex;
     justify-content: flex-end;
-    /* Centraliza horizontalmente o conteúdo dentro do banner */
+
     padding: 0 120px;
-    /* Adiciona espaçamento interno nas laterais do banner */
     color: var(--branco);
 }
 
-/* Seção de acervo */
+/* Acervo */
 
 .acervo {
-    padding: 50px 120px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-between;
     gap: 100px;
+
+    padding: 50px 120px;
 }
 
-.acervo-lista {
+.livros {
     display: grid;
     grid-template-columns: repeat(4, auto);
-    gap: 2%;
     justify-content: center;
-    width: 100%;
+    gap: 5%;
 }
 
-.acervo-item img {
+.livro {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    gap: 20px;
+
+    align-items: center;
+    text-align: center;
+}
+
+.livro img {
     height: 300px;
 }
 
-.acervo-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    text-align: center;
-    height: 100%;
-
-}
-
-.acervo-item h3 {
-    font-size: 1.2em;
+.livro h3 {
     text-transform: uppercase;
+    font-size: 1em;
     width: 65%;
 }
 
-.nome-autor {
+.livro-texto {
     font-size: 0.8em;
 }
 
+/* footer - feito pelos alunos */
 
-/* Rodapé */
-.rodape {
+footer{
     background-color: var(--azul-escuro);
     color: var(--branco);
-    padding: 50px 120px;
-    display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: auto auto auto;
-    grid-auto-flow: column;
-    align-content: space-between;
-    justify-content: center;
-    align-items: center;
+    padding: 100px 120px 30px;
 }
 
-.logos {
-    grid-column: 1;
-    grid-row: 1;
+.main {
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
-    gap: 50px;
 }
 
-.logos img {
-    width: 60%;
-    height: auto;
-}
-
-.pacote-links {
-    grid-column: 2;
-    grid-row: auto;
+.rodape-logos {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    gap: 10px;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    gap: 130px;
 }
 
-.colunas-rodape {
-    display: flex;
+.rodape-informacoes {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-content: space-between;
+    align-items: flex-start;
     gap: 100px;
 }
 
-.col-rodape h4,
-.redes-sociais h4 {
+.nav-footer  {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-footer p {
     color: var(--cor-destaque);
-    font-size: 0.8em;
-    margin-top: 1em;
     margin-bottom: 20px;
-}
 
-.col-rodape ul {
-    list-style: none;
-    padding: 0;
-    /* Remove o padding padrão da lista */
 }
-
-.col-rodape li {
+.nav-footer a {
+    color: var(--branco);
     margin-bottom: 10px;
-    /* Adiciona espaçamento entre os itens da lista */
-    font-size: 0.8em;
 }
 
-.redes-sociais {
-    display: flex;
-    align-items: center;
-    gap: 75px;
-}
-
-.redes-icon {
-    display: flex;
-    justify-content: space-between;
-}
-
-.redes-icon img {
-    width: 70%;
-    height: 70%;
-}
-
-.rodape span {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    display: block;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-    margin-top: 20px;
-}
-
-.direitos {
-    grid-column: 1 / -1;
-    grid-row: 3;
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    font-size: 0.8em;
-    margin-top: 20px;
-}
-
-.legal-links {
+.icones {
     display: flex;
     gap: 20px;
+}
+
+footer span {
+    display: flex;
+    margin: 50px 0;
+    background-color: white;
+    height: 1px;
+    width: 100%;
+}
+
+.footer-inferior {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.rodape-informacoes p {
+    color: var(--cor-destaque);
+    font-size: 1em;
+    font-weight: 700;
+    width: 100%;
+}
+
+.footer-inferior {
+    display: flex;
 }
