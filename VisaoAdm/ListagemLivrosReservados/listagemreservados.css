@@ -111,12 +111,15 @@
 }
 
 .status {
-    font-weight: 400;
-    color: red;
+    font-weight: git add00;
 }
 
-.livro .status p:nth-child(3) {
-    color: green;
+.status.pendente {
+    color: #D34A00;
+}
+
+.status.retirado {
+    color: #00A223;
 }
 
 /* CHECKBOX */
