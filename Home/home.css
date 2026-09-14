@@ -110,13 +110,11 @@
     align-items: center;
     justify-content: center;
 
-    padding: 80px 20px 50px;
-    /* em cima -> direita e esquerda -> embaixo */
+    padding: 80px 20px 50px; /* em cima -> direita e esquerda -> embaixo */
 
     border: 1px solid var(--azul-escuro);
     border-radius: 30px;
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25);
-    /* x -> y -> blur -> cor com transparência */
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.25); /* x -> y -> blur -> cor com transparência */
 
     text-align: center;
 
@@ -230,7 +228,7 @@
 
 /* footer - feito pelos alunos */
 
-footer {
+footer{
     background-color: var(--azul-escuro);
     color: var(--branco);
     padding: 100px 120px 30px;
@@ -255,7 +253,7 @@ footer {
     gap: 100px;
 }
 
-.nav-footer {
+.nav-footer  {
     display: flex;
     flex-direction: column;
 }
@@ -265,7 +263,6 @@ footer {
     margin-bottom: 20px;
 
 }
-
 .nav-footer a {
     color: var(--branco);
     margin-bottom: 10px;
@@ -307,17 +304,17 @@ footer span {
 }
 
 /* RESPONSIVIDADE */
-
 .botao-menu {
     background: transparent;
     border: none;
     cursor: pointer;
-    /* Esconder o botão de menu em telas maiores */
-    display: none;
+
+    display: none; /* esconde o elemento */
 }
 
 .botao-menu i {
     font-size: 2em;
+
     color: var(--branco);
 }
 
@@ -337,17 +334,23 @@ footer span {
         text-align: center;
     }
 
+    /* BENEFICIOS */
+
     .beneficios {
         gap: 50px;
+
         padding: 30px 0;
+
         overflow: hidden;
     }
 
     .beneficios-lista {
         grid-template-columns: repeat(3, 30%);
-        overflow: scroll;
-        /* Permite que a lista de benefícios seja rolável horizontalmente */
+
+        overflow-x: scroll; /* permite que o objeto role para o lado */
+
         padding: 50px 20px;
+
         justify-content: flex-start;
     }
 
@@ -368,7 +371,7 @@ footer span {
         width: 60%;
     }
 
-    /* BANNER-MEIO */
+    /* BANNER MEIO */
 
     .banner-meio {
         background-position: center;
@@ -392,8 +395,13 @@ footer span {
 
     .livros {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+
+        
         gap: 40px 20px;
     }
+    
+    /* quebra a pagina quando tem flex */
+    /* flex-wrap: wrap; */
 
     .livro img {
         max-width: 100%;
@@ -406,32 +414,216 @@ footer span {
     .livro-texto {
         font-size: 1em;
     }
+
 }
 
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
+    
     .cabecalho {
         padding: 0 40px;
+
         position: relative;
     }
 
     .botao-menu {
-        display: flex;        
+        /* faz o menu hamburguer aparecer novamente */
+        display: flex;
     }
 
     .navegacao {
         background-color: var(--azul-escuro);
+
         position: absolute;
+
+        /* distancia de 10vh do topo */
         top: 10vh;
+
+        /* encosta na esquerda */
         left: 0;
+
         width: 100%;
         height: auto;
+
         padding: 40px;
-        border-radius: 0 0 0px 30px;
+
+        border-radius: 0 0 0 30px;
+
         flex-direction: column;
         align-items: flex-end;
-        z-index: 100; /*Só funciona com position, quanto maior o z-index, mais na frente o elemento fica*/
+
+        gap: 20px;
+
+        /* só funciona com position, quanto maior o z-index, mais pra cima o elemento fica */
+        z-index: 100;
+
         display: none;
     }
-    
+
+    /* elemento com duas classes não tem espaço aqui no css */
+    .navegacao.ativo {
+        display: flex;
+    }
+
+    /* BANNER PRINCIPAL */
+    .banner-principal {
+        height: 50vh;
+
+        padding: 30px 0 10px 0;
+
+        position: relative;
+    }
+
+    .banner-principal .texto-banner {
+        width: 100%;
+        height: 100%;
+
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .banner-principal .texto-banner h1 {
+        font-size: 2em;
+    }
+
+    .banner-principal .texto-banner p {
+        display: none;
+    }
+
+    .banner-principal img {
+        width: 50%;
+
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        z-index: 1;
+    }
+
+    .banner-principal .botao {
+        padding: 20px 40px;
+
+        font-size: 1.2em;
+
+        z-index: 2;
+    }
+
+    /* BENEFICIOS */
+    .beneficios-lista {
+        grid-template-columns: repeat(3, 45%);
+    }
+
+    .beneficio-icone img {
+        width: 40%;
+    }
+
+    /* BANNER MEIO */
+    .banner-meio .texto-banner {
+        display: none;
+    }
+
+    /* FOOTER */
+    footer {
+        padding: 50px 40px;
+    }
+
+    footer .main {
+        flex-direction: column;
+        gap: 100px;
+    }
+
+    .rodape-logos {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        gap: 30px;
+    }
+
+    .rodape-logos img {
+        width: 40%;
+    }
+
+    .rodape-informacoes {
+        gap: 30px;
+    }
+
+    .rodape-informacoes p {
+        font-size: 1.5em;
+    }
+
+    .nav-footer a, .footer-inferior {
+        font-size: 1.2em;
+    }
+
+    footer span {
+        margin: 50px 0 30px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: right;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .banner-principal img {
+        width: 70%;
+    }
+
+    .beneficios-lista {
+        grid-template-columns: repeat(3, 65%);
+    }
+
+    .beneficio-icone {
+        width: 35%;
+    }
+
+    .banner-meio {
+        background-position: 40%;
+    }
+
+    /* FOOTER */
+
+    footer .main {
+        gap: 50px;
+    }
+
+    .rodape-informacoes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .rodape-logos {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .rodape-logos img {
+        width: 100%;
+    }
+
+    .rodape-icones {
+        display: flex;
+        gap: 10px;
+    }
+
+    .rodape-icones img {
+        width: 80%;
+    }
+
+    .footer-inferior {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer {
+        gap: 10px;
+        text-align: left;
+    }
+
+
 }
