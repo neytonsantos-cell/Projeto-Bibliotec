@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Livro</title>
+    <link rel="stylesheet" href="cadastrarlivro.css">
+    <link rel="stylesheet" href="../../styles/global.css">
+    <link rel="shortcut icon" href="../../imgs/Icone - Bibliotec.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+
+<body class="pagina-listagem">
+    <aside class="menu-lateral">
+        <div class="topo-menu">
+            <button class="botao-voltar">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <img src="../../imgs/Logo Vertical - clara.svg" alt="Logo do Menu Lateral" class="logo">
+        </div>
+        <nav class="meunu-navegacao">
+            <a href="#" class="item-menu">
+                <i class="fa-solid fa-user"></i>
+                <span>Perfil</span>
+            </a>
+            <a href="#" class="item-menu">
+                <i class="fa-solid fa-user-plus"></i>
+                <span>Cadastrar Usuário</span>
+            </a>
+            <a href="#" class="item-menu">
+                <i class="fa-solid fa-user-group"></i>
+                <span>Listar Usuários</span>
+            </a>
+            <a href="#" class="item-menu ativo">
+                <i class="fa-solid fa-book-medical"></i>
+                <span>Cadastrar Livros</span>
+            </a>
+            <a href="../ListagemLivros/listagem.html" class="item-menu">
+                <i class="fa-solid fa-book-bookmark"></i>
+                <span>Listar Livros</span>
+            </a>
+            <a href="../ListagemLivrosReservados/listagemreservados.html" class="item-menu">
+                <i class="fa-solid fa-address-book"></i>
+                <span>Livros Reservados</span>
+            </a>
+        </nav>
+        <a href="#" class="botao-sair">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Sair</span>
+        </a>
+    </aside>
+    <main class="conteudo-listagem">
+        <section class="cabecalho-pagina">
+            <h1>Cadastrar livro</h1>
+            <p>Preencha as informações para cadastrar um novo livro.</p>
+        </section>
+
+        <section class="card-cadastro">
+            <form class="formulario-livro">
+                <div class="linha-campos">
+                    <div class="grupo-campo">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Ex.: Dom Casmurro">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="capa">Foto da capa</label>
+                        <input type="file" id="capa">
+                    </div>
+                </div>
+
+                <div class="linha-campos">
+                    <div class="grupo-campo">
+                        <label for="escritor">Escritor(a)</label>
+                        <input type="text" id="escritor" placeholder="Ex.: Machado de Assis">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="idioma">Idioma</label>
+                        <input type="text" id="idioma" placeholder="Ex.: Português">
+                    </div>
+                </div>
+
+                <div class="linha-campos">
+                    <div class="grupo-campo">
+                        <label for="editora">Editora</label>
+                        <input type="text" id="editora" placeholder="Ex.: Companhia das Letras">
+                    </div>
+                    <div class="grupo-campo">
+                        <label for="categoria">Categorias</label>
+                        <div class="campo-select">
+                            <select id="categoria">
+                                <option value="" selected disabled>Selecione uma categoria</option>
+                                <option value="ti">TI</option>
+                                <option value="romance">Romance</option>
+                                <option value="fantasia">Fantasia</option>
+                                <option value="biografia">Biografia</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="descricao">Descrição</label>
+                    <textarea id="descricao" placeholder="Escreva uma breve descrição do livro."></textarea>
+                </div>
+
+                <div class="area-botao-salvar">
+                    <button type="submit" class="botao-salvar">Salvar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+
+</html>
